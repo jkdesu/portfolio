@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Your Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-bio-container">
+                    <div class="hero-text">
+                        <p class="hero-subtitle">Ji-in Kang is an aspiring brand designer with a background in Economics from Waseda University in Tokyo. She is currently pursuing a master's degree in Computational Design Practices at Columbia University, where she explores the intersection of culture and emotion through visual identity. Using computational tools, she adds conceptual layers to her design language—often drawing from frameworks like Venn diagrams to map relationships. Data visualization plays a key role in her creative process, helping her communicate complex ideas in engaging and meaningful ways.</p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="work/profile.JPG" alt="Ji-in Kang" class="profile-image">
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+            <div class="scroll-arrow">
+                <a href="#work" class="arrow-link">
+                    <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5L12 19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+
+
+        <!-- Work Section -->
+        <section id="work" class="work">
+            <div class="container">
+                <h2 class="section-title">Featured Work</h2>
+                <div class="work-grid">
+                    <article class="work-item">
+                        <div class="work-image">
+                            <img src="work/crunkgraph.jpg" alt="CRUNKGRAPH Project" class="project-image">
+                        </div>
+                        <div class="work-content">
+                            <h3>CRUNKGRAPH</h3>
+                            <p>Exploring identity through playful geometry and cultural intersections. Inspired by Venn diagrams, streetwear, and designer toys across Tokyo and New York. Through intersection,unique characters are created.</p>
+                            <div class="work-tags">
+                                <span class="work-tag">Adobe Illustrator</span>
+                                <span class="work-tag">Rhino</span>
+                                <span class="work-tag">Grasshopper</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="crunkgraph.html" class="work-link">View Project</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="work-item">
+                        <div class="work-image">
+                            <img src="work/mappinghype.jpg" alt="Mapping Hype Project" class="project-image">
+                        </div>
+                        <div class="work-content">
+                            <h3>Mapping Hype</h3>
+                            <p>A map exploring how hype culture spreads through designer toy stores in NYC, LA, Tokyo, and Shanghai—using a custom toy design to visualize cultural hotspots and consumer trends.</p>
+                            <div class="work-tags">
+                                <span class="work-tag">Python</span>
+                                <span class="work-tag">HTML</span>
+                                <span class="work-tag">CSS</span>
+                                <span class="work-tag">JavaScript</span>
+                            </div>
+                            <div class="work-links">
+                                <a href="mapping-hype.html" class="work-link">View Project</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-simple">
+                    <a href="mailto:jiinkang20@gmail.com" class="contact-email">
+                        Email: jiinkang20@gmail.com
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ji-in Kang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

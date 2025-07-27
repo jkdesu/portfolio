@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapping Hype - Ji-in Kang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, 
+                #0066ff 0%, 
+                #0052cc 25%, 
+                #003d99 50%, 
+                #002966 75%, 
+                #001433 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        .project-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        
+        .project-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .project-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: 500;
+            margin: 2rem 0;
+            border-radius: 0;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background: #0066ff;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0066ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #0052cc;
+        }
+        
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .methodology-item {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border: 1px solid #333;
+        }
+        
+        .methodology-item h3 {
+            color: #0066ff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .methodology-item p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+        
+        .map-instructions {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #1a1a1a;
+            border: 1px solid #333;
+        }
+        
+        .map-instructions h3 {
+            color: #ffffff;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .map-instructions ul {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+        
+        .map-instructions li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">Mapping Hype</h1>
+            <p style="font-size: 1.3rem; color: #b0b0b0; max-width: 600px;">
+                A map exploring how hype culture spreads through designer toy stores in NYC, LA, Tokyo, and Shanghai—using a custom toy design to visualize cultural hotspots and consumer trends.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Data Visualization</span>
+                <span class="tech-tag">Cultural Analysis</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-section">
+            <h2>Project Overview</h2>
+            <p>
+                "Mapping Hype" is an interactive data visualization project that explores the global spread of hype culture through designer toy stores across four major cities: New York City, Los Angeles, Tokyo, and Shanghai. The project uses a custom-designed toy as a visual metaphor to map cultural hotspots and consumer behavior patterns.
+            </p>
+            <div class="project-image">
+                <iframe src="final project/index.html" width="100%" height="100%" frameborder="0" style="border: none;"></iframe>
+            </div>
+            <div class="map-instructions">
+                <h3>How to Interact with the Map:</h3>
+                <ul>
+                    <li>Click on city buttons (NYC, Tokyo, Shanghai, Los Angeles) to jump to that region.</li>
+                    <li>Each toy figure on the map represents a designer toy store in that city.</li>
+                    <li>Hover or click a toy to reveal store details, including name and address.</li>
+                    <li>Colors and characters indicate the cultural identity or theme of that region's toy scene.</li>
+                    <li>The map acts as a visual metaphor for trend clustering and hype culture diffusion.</li>
+                    <li>Designed to explore consumer behavior patterns and global intersections of street culture.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Research Methodology</h2>
+            <div class="methodology-grid">
+                <div class="methodology-item">
+                    <h3>Data Collection</h3>
+                    <p>Comprehensive mapping of designer toy stores, including store locations, product offerings, and consumer demographics across the four target cities.</p>
+                </div>
+                <div class="methodology-item">
+                    <h3>Cultural Analysis</h3>
+                    <p>Study of hype culture patterns, including limited edition releases, resale markets, and community engagement in each location.</p>
+                </div>
+                <div class="methodology-item">
+                    <h3>Visual Design</h3>
+                    <p>Custom toy design serving as a visual metaphor to represent cultural trends and consumer behavior patterns.</p>
+                </div>
+                <div class="methodology-item">
+                    <h3>Interactive Mapping</h3>
+                    <p>Development of an interactive web-based visualization that allows users to explore cultural hotspots and trends.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Technical Implementation</h2>
+            <p>
+                The project was built using Python for data processing and analysis, with HTML, CSS, and JavaScript for the interactive web visualization. The custom toy design was created using computational design tools, incorporating elements that represent different aspects of hype culture and consumer behavior.
+            </p>
+            <p>
+                The interactive map allows users to explore different cities and view detailed information about designer toy stores, including their locations, product offerings, and cultural significance. The custom toy design serves as both a visual element and a data visualization tool, with different parts of the toy representing different aspects of the cultural analysis.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Key Findings</h2>
+            <p>
+                The project revealed distinct patterns in how hype culture manifests across different cities. Tokyo showed the highest concentration of designer toy stores, with a strong emphasis on collectible culture. New York City demonstrated a mix of high-end boutiques and street culture influences. Los Angeles revealed connections between entertainment industry and designer toy culture. Shanghai showed emerging trends in luxury designer toy markets.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Design Process</h2>
+            <p>
+                The custom toy design was developed through iterative prototyping, incorporating feedback from cultural experts and designer toy enthusiasts. The final design serves as both a visual metaphor and an interactive element in the web visualization, allowing users to explore different aspects of the cultural analysis through different parts of the toy.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Impact & Future Work</h2>
+            <p>
+                This project provides a unique lens through which to understand global cultural trends and consumer behavior. Future iterations could expand to include more cities, real-time data updates, and deeper analysis of social media influence on hype culture.
+            </p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ji-in Kang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

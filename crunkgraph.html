@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUNKGRAPH - Ji-in Kang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, 
+                #0066ff 0%, 
+                #0052cc 25%, 
+                #003d99 50%, 
+                #002966 75%, 
+                #001433 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        .project-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .project-section {
+            margin-bottom: 3rem;
+        }
+        
+        .project-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .project-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            border-radius: 0;
+        }
+        
+        .project-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background: #0066ff;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0066ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #0052cc;
+        }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .concept-item {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border: 1px solid #333;
+        }
+        
+        .concept-item h3 {
+            color: #0066ff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .concept-item p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+        
+        .venn-diagram {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .venn-circle {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            border: 2px solid #0066ff;
+            border-radius: 50%;
+            margin: 0 1rem;
+            position: relative;
+            opacity: 0.7;
+        }
+        
+        .venn-circle::before {
+            content: attr(data-label);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #0066ff;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .artwork-carousel {
+            margin-top: 3rem;
+        }
+        
+        .artwork-carousel h3 {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            height: 600px;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(0, 102, 255, 0.8);
+        }
+        
+        .prev-btn {
+            left: 10px;
+        }
+        
+        .next-btn {
+            right: 10px;
+        }
+        
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #0066ff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">CRUNKGRAPH</h1>
+            <p style="font-size: 1.3rem; color: #b0b0b0; max-width: 600px;">
+                Exploring identity through playful geometry and cultural intersections. Inspired by Venn diagrams, streetwear, and designer toys across Korea, Tokyo, and New York.
+            </p>
+            <div class="tech-stack">
+                <span class="tech-tag">Adobe Illustrator</span>
+                <span class="tech-tag">Rhino</span>
+                <span class="tech-tag">Grasshopper</span>
+                <span class="tech-tag">Computational Design</span>
+                <span class="tech-tag">Cultural Research</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-section">
+            <h2>Project Overview</h2>
+            <p>
+                CRUNKGRAPH emerged from an unexpected connection I made while learning set theory—realizing that Venn diagrams could reflect more than logic. As someone shaped by overlapping cultural identities—Korean American, raised in Korea, educated in Tokyo, now living in New York—I've often felt like a floater navigating fragmented belonging. The intersecting circles of a Venn diagram suddenly became a metaphor for my identity: multiple, layered, and inseparable.
+            </p>
+            <p>
+                This sparked my core design philosophy: identity isn't singular, it's compositional. Inspired by streetwear, designer toys, and visual systems, CRUNKGRAPH uses playful geometry to map how cultural forces and emotional experiences interact. These forms aren't just aesthetic—they symbolize the harmony and tension of multiplicity. Through this lens, I aim to visualize complexity as a new kind of clarity—where even contradictions have a place.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Conceptual Framework</h2>
+            <div class="project-image">
+                <img src="work/title.jpg" alt="CRUNKGRAPH Title Design">
+            </div>
+            <div class="venn-diagram">
+                <div class="venn-circle" data-label="Korea"></div>
+                <div class="venn-circle" data-label="Tokyo"></div>
+                <div class="venn-circle" data-label="New York"></div>
+            </div>
+            <p>
+                The project uses Venn diagrams as a visual metaphor to explore how cultural influences overlap and create new design languages.
+            </p>
+            
+            <div class="artwork-carousel">
+                <h3>Artwork Gallery</h3>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="work/crunkgraph4.png" alt="CRUNKGRAPH Artwork 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="work/crunkgraph1.png" alt="CRUNKGRAPH Artwork 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="work/crunkgraph2.png" alt="CRUNKGRAPH Artwork 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="work/crunkgraph3.png" alt="CRUNKGRAPH Artwork 3">
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev-btn">‹</button>
+                    <button class="carousel-btn next-btn">›</button>
+                    <div class="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Research Methodology</h2>
+            <div class="concept-grid">
+                <div class="concept-item">
+                    <h3>Cultural Analysis</h3>
+                    <p>Study of streetwear and designer toy cultures across three major cities, identifying unique design languages and shared aesthetic principles.</p>
+                </div>
+                <div class="concept-item">
+                    <h3>Geometric Exploration</h3>
+                    <p>Development of computational algorithms in Grasshopper to generate geometric patterns based on cultural intersection data.</p>
+                </div>
+                <div class="concept-item">
+                    <h3>Visual Design</h3>
+                    <p>Creation of custom typefaces and graphic elements using Adobe Illustrator, incorporating computational geometry and cultural references.</p>
+                </div>
+                <div class="concept-item">
+                    <h3>3D Modeling</h3>
+                    <p>Use of Rhino for 3D modeling and prototyping, translating 2D geometric patterns into three-dimensional forms.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Technical Implementation</h2>
+            <p>
+                The project currently combines traditional design tools with computational methods. Adobe Illustrator was used for initial concept development and final graphic design. The computational workflow allows for rapid iteration and exploration of different geometric configurations, while maintaining the playful aesthetic that characterizes streetwear and designer toy cultures.
+            </p>
+            <p>
+                Future development will implement 3D modeling through Rhino and Grasshopper for digital fabrication. This will enable the creation of physical prototypes and exploration of spatial relationships, as well as the development of parametric algorithms that can generate geometric patterns based on cultural intersection data. The final output will include both digital graphics and physical prototypes that demonstrate the intersection of computational design and cultural research.
+            </p>
+        </div>
+
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ji-in Kang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Carousel functionality
+        const track = document.querySelector('.carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            updateCarousel();
+        }
+        
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+        
+        // Auto-play (optional)
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html> 
