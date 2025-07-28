@@ -24,19 +24,20 @@
         }
         
         .project-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem 1rem;
         }
         
         .project-section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
         
         .project-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             color: #ffffff;
+            font-weight: 600;
         }
         
         .project-section p {
@@ -52,8 +53,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 2rem 0;
+            margin: 3rem 0;
             border-radius: 0;
+            border: 1px solid #333;
         }
         
         .project-image img {
@@ -95,7 +97,7 @@
         
         .concept-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -155,11 +157,10 @@
         
         .carousel-container {
             position: relative;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             overflow: hidden;
             border-radius: 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
         .carousel-track {
@@ -169,13 +170,16 @@
         
         .carousel-slide {
             min-width: 100%;
-            height: 600px;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .carousel-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
         
         .carousel-btn {
