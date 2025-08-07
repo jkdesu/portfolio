@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapping Invisible - Ji-in Kang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, 
+                #0066ff 0%, 
+                #0052cc 25%, 
+                #003d99 50%, 
+                #002966 75%, 
+                #001433 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            padding: 2rem 0;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .hero-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 3rem;
+        }
+        
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .hero-sidebar {
+            flex-shrink: 0;
+            width: 200px;
+        }
+        
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .project-section {
+            margin-bottom: 4rem;
+        }
+        
+        .project-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .project-section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 700px;
+            background: linear-gradient(135deg, #1a1a1a, #333);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: 500;
+            margin: 3rem 0;
+            border-radius: 0;
+            border: 1px solid #333;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background: #0066ff;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0066ff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #0052cc;
+        }
+        
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .methodology-item {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border: 1px solid #333;
+        }
+        
+        .methodology-item h3 {
+            color: #0066ff;
+            margin-bottom: 0.5rem;
+        }
+        
+        .methodology-item p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+        
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .timeline-section {
+            margin-bottom: 4rem;
+        }
+        
+        .timeline-era {
+            color: #0066ff;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .timeline-item {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 0;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            border-color: #0066ff;
+        }
+        
+        .timeline-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #333;
+        }
+        
+        .timeline-content {
+            padding: 1.5rem;
+        }
+        
+        .timeline-content h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-content p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="hero-content">
+            <a href="index.html" class="back-link">
+                ← Back to Portfolio
+            </a>
+            <div class="hero-main">
+                <div class="hero-text">
+                    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Mapping Invisible</h1>
+                    <p style="font-size: 1.3rem; color: #b0b0b0; line-height: 1.6;">
+                        A CDP Summer project exploring how invisible infrastructures shape the value, psychology, and cultural meaning of collectible designer toys.
+                    </p>
+                </div>
+                <div class="hero-sidebar">
+                    <div class="tech-stack" style="flex-direction: column; align-items: flex-start;">
+                        <span class="tech-tag">Data Visualization</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Blender</span>
+                        <span class="tech-tag">Grasshopper</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-section">
+            <h2>Project Overview</h2>
+            <p>
+                "Mapping Invisible" is a computational design project that explores the hidden infrastructures behind designer toy culture. Through data visualization and computational tools, this project reveals the invisible networks—from manufacturing processes to digital hype algorithms—that shape the value and psychology of collectible culture.
+            </p>
+            <div class="project-image">
+                <img src="mapping_invisible/network.png" alt="Network Analysis" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Research Question</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #ffffff; font-weight: 500; margin-bottom: 2rem;">
+                How do invisible infrastructures—from factory labor and material chains to digital sentiment and algorithmic hype—shape the value, psychology, and cultural meaning of collectible designer toys?
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.7; color: #b0b0b0; margin-bottom: 2rem;">
+                If hidden systems became transparent, would we still pay the premium, still collect? How does transparency challenge the legitimacy of collectible culture's pricing models?
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Historical Timeline</h2>
+            
+            <div class="timeline-section">
+                <h3 class="timeline-era">20th Century – Consumer Collectibles & Mass Media</h3>
+                <div class="timeline-grid">
+                    <div class="timeline-item">
+                        <img src="mapping_invisible/history/baseballcards.jpg" alt="Baseball Cards" class="timeline-image">
+                        <div class="timeline-content">
+                            <h4>1910–1930: Trading Cards</h4>
+                            <p>Foundation of trading card culture.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="mapping_invisible/history/barbie.jpg" alt="Barbie" class="timeline-image">
+                        <div class="timeline-content">
+                            <h4>1945–1960: Post-War Boom</h4>
+                            <p>Limited editions and exclusivity psychology.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="mapping_invisible/history/starwars.jpeg" alt="Star Wars" class="timeline-image">
+                        <div class="timeline-content">
+                            <h4>1977: Star Wars Revolution</h4>
+                            <p>Blueprint for modern collectible culture.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="mapping_invisible/history/bearbricks.jpg" alt="Bearbricks" class="timeline-image">
+                        <div class="timeline-content">
+                            <h4>1999–2003: Be@rbrick</h4>
+                            <p>Bridges collectibles with contemporary art.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-section">
+                <h3 class="timeline-era">21st Century – Collectibles as Capital</h3>
+                <div class="timeline-grid">
+                    <div class="timeline-item">
+                        <img src="mapping_invisible/history/stockx.jpg" alt="StockX" class="timeline-image">
+                        <div class="timeline-content">
+                            <h4>2006–2010: Digital Platforms</h4>
+                            <p>Gamified trading with algorithmic pricing.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="mapping_invisible/history/gamification.jpg" alt="Gamification" class="timeline-image">
+                        <div class="timeline-content">
+                            <h4>2010–2017: Gamification</h4>
+                            <p>Competitive algorithm-driven social status.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="mapping_invisible/history/cryptopunks.jpg" alt="CryptoPunks" class="timeline-image">
+                        <div class="timeline-content">
+                            <h4>2017–2021: NFTs & Blockchain</h4>
+                            <p>Complete digitization of collectible culture.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="mapping_invisible/history/liltay.jpg" alt="Lil Tay" class="timeline-image">
+                        <div class="timeline-content">
+                            <h4>Present: Social Media Flex</h4>
+                            <p>Social media sentiment drives market prices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Research Methodology</h2>
+            <div class="methodology-grid">
+                <div class="methodology-item">
+                    <h3>Data Collection</h3>
+                    <p>Analyzed price data for 5 KAWS figures over time, tracking price movements and volatility patterns.</p>
+                </div>
+                <div class="methodology-item">
+                    <h3>Psychology Scoring</h3>
+                    <p>Applied scoring algorithms to identify Completionist, FOMO Spike, Anchoring Bias, Speculative Buyer, and Emotional Attachment patterns.</p>
+                </div>
+                <div class="methodology-item">
+                    <h3>Visualization</h3>
+                    <p>Created heatmaps, scatter plots, and radar charts to visualize the connection between psychology and pricing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Analysis Visualization</h2>
+            <p>
+                Visual representation of the KAWS price psychology analysis, showing the connection between collector behavior patterns and market pricing dynamics.
+            </p>
+            <div class="project-image">
+                <img src="mapping_invisible/kaws_price.png" alt="KAWS Price Psychology Analysis" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Project Demo</h2>
+            <p>
+                Interactive demonstration of the mapping invisible project, showcasing the bot interface and dynamic visualization capabilities.
+            </p>
+            <div class="project-image">
+                <img src="mapping_invisible/bot.jpg" alt="Bot Interface" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div class="project-image">
+                <img src="mapping_invisible/demo.gif" alt="Project Demo Animation" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Key Findings</h2>
+            <div class="methodology-grid" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="methodology-item" style="border-left: 4px solid #0066ff;">
+                    <h3 style="color: #0066ff;">FOMO Spike Dominance</h3>
+                    <p>Highest psychology scores found in figures with limited releases and sudden price spikes, indicating strong FOMO-driven behavior.</p>
+                </div>
+                <div class="methodology-item" style="border-left: 4px solid #ff4444;">
+                    <h3 style="color: #ff4444;">Anchoring Effect</h3>
+                    <p>Price outliers create new 'anchors' that reset market expectations, leading to sustained higher valuations.</p>
+                </div>
+                <div class="methodology-item" style="border-left: 4px solid #44ff44;">
+                    <h3 style="color: #44ff44;">Speculative Patterns</h3>
+                    <p>Clear correlation between market peaks and speculative buying behavior, with investors driving price inflation.</p>
+                </div>
+                <div class="methodology-item" style="border-left: 4px solid #ffaa00;">
+                    <h3 style="color: #ffaa00;">Emotional Premium</h3>
+                    <p>Figures with strong brand recognition show higher emotional attachment scores, commanding premium prices beyond material value.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Key Findings</h2>
+            <p>
+                The project revealed how invisible infrastructures—from factory labor conditions to algorithmic hype patterns—create complex value systems that justify premium pricing in designer toy culture. These findings demonstrate how transparency can challenge the legitimacy of collectible pricing models and reveal the psychological and cultural factors that drive consumer behavior in the designer toy market.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>Impact & Implications</h2>
+            <p>
+                This analysis demonstrates that invisible psychological factors are not just theoretical concepts, but measurable forces that directly influence market behavior. The connection between collector psychology and actual pricing reveals how emotional and cognitive biases create real economic value in the designer toy market.
+            </p>
+            <p>
+                Understanding these patterns is crucial for mapping the invisible infrastructures that shape hype culture, as psychological factors often outweigh material costs in determining final market prices.
+            </p>
+        </div>
+
+
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ji-in Kang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
