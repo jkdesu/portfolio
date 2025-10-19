@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapping Invisible - Ji-in Kang</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="project-header">
+        <div class="container">
+            <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+            <h1 class="project-logo">Ji-in Kang</h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="project-title">Mapping Invisible</h1>
+            <p class="project-subtitle">Uncovering the Hidden Infrastructures of Collectible Designer Toys</p>
+            <div class="project-meta">
+                <span class="meta-item">Research Project</span>
+                <span class="meta-divider">•</span>
+                <span class="meta-item">Columbia University GSAPP</span>
+                <span class="meta-divider">•</span>
+                <span class="meta-item">2025</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Images -->
+    <section class="section">
+        <div class="container">
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="fp1.png" alt="Project Overview 1">
+                </div>
+                <div class="slide">
+                    <img src="fp2.png" alt="Project Overview 2">
+                </div>
+                <div class="slide">
+                    <img src="fp3.png" alt="Project Overview 3">
+                </div>
+                
+                <button class="slide-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="slide-btn next" onclick="changeSlide(1)">❯</button>
+                
+                <div class="slide-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Question -->
+    <section class="section grey-bg">
+        <div class="container">
+            <h2 class="section-title">Research Question</h2>
+            <div class="research-box">
+                <ul class="research-questions">
+                    <li>How do invisible infrastructures—from factory labor and material chains to digital sentiment and algorithmic hype—shape the value, psychology, and cultural meaning of collectible designer toys?</li>
+                    <li>If hidden systems became transparent, would we still pay the premium, still collect? How does transparency challenge the legitimacy of collectible culture's pricing models?</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historical Timeline -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Historical Timeline</h2>
+            
+            <!-- 20th Century -->
+            <div class="timeline-group">
+                <h3 class="timeline-heading">20th Century – Consumer Collectibles & Mass Media</h3>
+                <div class="timeline-grid">
+                    <div class="timeline-item">
+                        <img src="history/baseballcards.jpg" alt="1910-1930">
+                        <div class="timeline-content">
+                            <h4>1910–1930</h4>
+                            <p>Trading Cards, Toys, Comics</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="history/barbie.jpg" alt="1945-1960">
+                        <div class="timeline-content">
+                            <h4>1945–1960</h4>
+                            <p>Post-War Boom</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="history/starwars.jpeg" alt="1977">
+                        <div class="timeline-content">
+                            <h4>1977</h4>
+                            <p>Star Wars Revolution</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="history/bearbricks.jpg" alt="1999-2003">
+                        <div class="timeline-content">
+                            <h4>1999–2003</h4>
+                            <p>Be@rbrick & Kidrobot</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 21st Century -->
+            <div class="timeline-group">
+                <h3 class="timeline-heading">21st Century – Collectibles as Capital</h3>
+                <div class="timeline-grid">
+                    <div class="timeline-item">
+                        <img src="history/stockx.jpg" alt="2006-2010">
+                        <div class="timeline-content">
+                            <h4>2006–2010</h4>
+                            <p>Digital Platforms</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="history/gamification.jpg" alt="2010-2017">
+                        <div class="timeline-content">
+                            <h4>2010–2017</h4>
+                            <p>Gamification</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="history/cryptopunks.jpg" alt="2017-2021">
+                        <div class="timeline-content">
+                            <h4>2017–2021</h4>
+                            <p>NFTs & Blockchain</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <img src="history/liltay.jpg" alt="Present">
+                        <div class="timeline-content">
+                            <h4>Present</h4>
+                            <p>Social Media Flex</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layers Section -->
+    <section class="section grey-bg">
+        <div class="container">
+            <h2 class="section-title">There are more layers than what sits on the storefront...</h2>
+            <div class="image-container">
+                <img src="ant.png" alt="Supply Chain Layers" class="full-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Interactive Material Chain Map</h2>
+            <div class="map-wrapper">
+                <div id="map"></div>
+            </div>
+            <div class="map-controls">
+                <button class="map-btn" onclick="toggleLayer('toy-stores')">Toy Stores</button>
+                <button class="map-btn" onclick="toggleLayer('material-chain')">Material Chain</button>
+                <button class="map-btn" onclick="toggleLayer('both')">Show Both</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- KAWS Analysis -->
+    <section class="section grey-bg">
+        <div class="container">
+            <h2 class="section-title">KAWS Price Psychology Analysis</h2>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h3>Analysis Overview</h3>
+                    <p>This analysis connects the psychology of collectors to actual KAWS figure price data. By analyzing price volatility, average prices, price ranges, and trends, we can identify which psychological patterns are most prevalent in the market.</p>
+                </div>
+                
+                <div class="analysis-card">
+                    <h3>Methodology</h3>
+                    <div class="method-grid">
+                        <div>
+                            <h4>Data Collection</h4>
+                            <p>Analyzed price data for 5 KAWS figures over time, tracking price movements and volatility patterns.</p>
+                        </div>
+                        <div>
+                            <h4>Psychology Scoring</h4>
+                            <p>Applied scoring algorithms to identify Completionist, FOMO Spike, Anchoring Bias, Speculative Buyer, and Emotional Attachment patterns.</p>
+                        </div>
+                        <div>
+                            <h4>Visualization</h4>
+                            <p>Created heatmaps, scatter plots, and radar charts to visualize the connection between psychology and pricing.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-card">
+                    <h3>Key Findings</h3>
+                    <div class="findings-grid">
+                        <div class="finding">
+                            <h4>FOMO Spike Dominance</h4>
+                            <p>Highest psychology scores found in figures with limited releases and sudden price spikes.</p>
+                        </div>
+                        <div class="finding">
+                            <h4>Anchoring Effect</h4>
+                            <p>Price outliers create new "anchors" that reset market expectations.</p>
+                        </div>
+                        <div class="finding">
+                            <h4>Speculative Patterns</h4>
+                            <p>Clear correlation between market peaks and speculative buying behavior.</p>
+                        </div>
+                        <div class="finding">
+                            <h4>Emotional Premium</h4>
+                            <p>Figures with strong brand recognition command premium prices beyond material value.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-container">
+                <img src="kaws_price_psychology_analysis.png" alt="KAWS Analysis Visualization" class="full-image">
+            </div>
+
+            <div class="image-container">
+                <img src="bot.jpg" alt="Bot Analysis" class="full-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Demo -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Project Demo</h2>
+            <div class="image-container">
+                <img src="toy_bot_dual_personalized.gif" alt="Dual Perspective Animation" class="full-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo -->
+    <section class="section grey-bg">
+        <div class="container">
+            <h2 class="section-title">Project Demo Version</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="collectorbot.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="project-footer">
+        <div class="container">
+            <a href="../../index.html" class="footer-link">← Back to Portfolio</a>
+            <p>&copy; 2025 Ji-in Kang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
